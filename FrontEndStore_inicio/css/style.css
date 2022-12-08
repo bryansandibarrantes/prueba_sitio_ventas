@@ -140,10 +140,6 @@ aplica la propiedad que se indica*/
   padding: 1rem;
 }
 
-.producto__imagen {
-  width: 100%;
-}
-
 .producto__nombre {
   font-size: 4rem;
 }
@@ -201,15 +197,12 @@ aplica la propiedad que se indica*/
 }
 
 .nosotros__imagen {
-  grid-row: 1/2;
-  width: 100%;
+  grid-row: 1 / 2;
 }
 
 @media (min-width: 768px) {
   .nosotros__imagen {
-    grid-template-columns: repeat(2, 1fr);
-    column-gap: 2rem;
-    grid-column: 2/3;
+    grid-column: 2 / 3;
   }
 }
 
@@ -234,6 +227,48 @@ aplica la propiedad que se indica*/
   margin: 0;
 }
 
-.bloque__imagen {
-  width: 100%;
+/*Página del producto --------------------------------------------------------*/
+
+@media (min-width: 768px) {
+  .camisa {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    column-gap: 2rem;
+  }
+}
+
+.formulario {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: 2rem;
+}
+
+.formulario__campo {
+  border-color: var(--primarioOscuro);
+  border-width: 1rem;
+  border-style: solid;
+  /*Se puede hacer de la siguiente forma porque son todos atributos del border
+  border: 1rem solid var(--primarioOscuro);*/
+  background-color: transparent;
+  color: var(--blanco);
+  font-size: 2rem;
+  font-family: Arial, Helvetica, sans-serif;
+  padding: 1rem;
+}
+
+.formulario__submit {
+  background-color: var(--secundario);
+  border: none;
+  font-size: 2rem;
+  font-family: var(--fuentePrincipal);
+  padding: 2rem;
+  /*Transición del color en el botón. Pasa de aquí al hover. Puede usarse con el
+  texto para que aumente de tamaño cuando se ponga el cursor sobre el botón*/
+  transition: background-color 0.3s ease;
+  grid-column: 1 / 3;
+}
+
+.formulario__submit:hover {
+  cursor: pointer;
+  background-color: var(--secundarioOscuro);
 }
